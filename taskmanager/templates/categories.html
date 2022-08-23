@@ -1,7 +1,25 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="ligth-grey-text center-align">Categories:</h3>
+<h3 class="light-blue-text text-darken-2 center-align">Categories:</h3>
+
+
+<div class="row center-align">
+    {% for category in categories %}
+    <div class="col s12 m6 l3">
+        <div class="card light-blue darken-4">
+            <div class="card-content white-text">
+                <span class="card-title">{{ category.category_name }}</span>
+
+            </div>
+            <div class="card-action">
+                <a href="#" class="btn green accent-4">Edit</a>
+                <a href="#" class="btn red">Delete</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 
 
 <div class="row">
@@ -9,9 +27,7 @@
         <a href="{{ url_for('add_category')}}" class="btn-large light-blue darken-2">
             Add Category <i class="fas fa-plus-square right"></i>
         </a>
-
     </div>
-
 </div>
 
 {% endblock %}
